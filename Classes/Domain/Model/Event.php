@@ -1,34 +1,23 @@
 <?php
 namespace SpoonerWeb\Justevents\Domain\Model;
 
-
-/***************************************************************
+/**
+ * This file is part of the TYPO3 CMS project.
  *
- *  Copyright notice
+ * It is free software; you can redistribute it and/or modify it under
+ * the terms of the GNU General Public License, either version 2
+ * of the License, or any later version.
  *
- *  (c) 2014 Thomas Löffler <loeffler@spooner-web.de>, Spooner Web
+ * For the full copyright and license information, please read the
+ * LICENSE.txt file that was distributed with this source code.
  *
- *  All rights reserved
- *
- *  This script is part of the TYPO3 project. The TYPO3 project is
- *  free software; you can redistribute it and/or modify
- *  it under the terms of the GNU General Public License as published by
- *  the Free Software Foundation; either version 3 of the License, or
- *  (at your option) any later version.
- *
- *  The GNU General Public License can be found at
- *  http://www.gnu.org/copyleft/gpl.html.
- *
- *  This script is distributed in the hope that it will be useful,
- *  but WITHOUT ANY WARRANTY; without even the implied warranty of
- *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- *  GNU General Public License for more details.
- *
- *  This copyright notice MUST APPEAR in all copies of the script!
- ***************************************************************/
+ * The TYPO3 project - inspiring people to share!
+ */
 
 /**
- * Event
+ * Event model
+ *
+ * @author Thomas Löffler <loeffler@spooner-web.de>
  */
 class Event extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 
@@ -84,7 +73,8 @@ class Event extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	/**
 	 * image
 	 *
-	 * @var
+	 * @var \TYPO3\CMS\Extbase\Domain\Model\FileReference
+	 * @lazy
 	 */
 	protected $image = NULL;
 
@@ -179,7 +169,7 @@ class Event extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	 * @param integer $timeFrom
 	 * @return void
 	 */
-	public function setTimeFrom(integer $timeFrom) {
+	public function setTimeFrom($timeFrom) {
 		$this->timeFrom = $timeFrom;
 	}
 
@@ -198,7 +188,7 @@ class Event extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	 * @param integer $timeTo
 	 * @return void
 	 */
-	public function setTimeTo(integer $timeTo) {
+	public function setTimeTo($timeTo) {
 		$this->timeTo = $timeTo;
 	}
 
@@ -224,16 +214,21 @@ class Event extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	/**
 	 * Returns the image
 	 *
-	 * @return  $image
+	 * @return \TYPO3\CMS\Extbase\Domain\Model\FileReference $image
 	 */
 	public function getImage() {
-		return $this->image;
+		if (!is_object($this->image)){
+			return NULL;
+		} elseif ($this->image instanceof \TYPO3\CMS\Extbase\Persistence\Generic\LazyLoadingProxy) {
+			$this->image->_loadRealInstance();
+		}
+		return $this->image->getOriginalResource();
 	}
 
 	/**
 	 * Sets the image
 	 *
-	 * @param string $image
+	 * @param \TYPO3\CMS\Extbase\Domain\Model\FileReference $image
 	 * @return void
 	 */
 	public function setImage($image) {
