@@ -7,7 +7,7 @@
 			<div class="event-item h-event">
 				<f:link.page pageUid="{settings.latestUpcoming.pidForListView}">
 					<header class="event-header">
-						<time class="dt-start" datetime="{event.dateFrom -> f:format.date(format: 'Y-m-d')} 12:00">{event.dateFrom -> f:format.date(format: 'd')}.</time>-<time class="dt-end" datetime="{event.dateTo -> f:format.date(format: 'Y-m-d')} 12:00">{event.dateTo -> f:format.date(format: 'd')}.</time>
+						<time class="dt-start" datetime="{event.dateFrom -> f:format.date(format: 'Y-m-d')} 12:00">{event.dateFrom -> f:format.date(format: 'd')}.</time><f:if condition="{event.dateFrom -> f:format.date(format: 'dmY')} != {event.dateTo -> f:format.date(format: 'dmY')}">-<time class="dt-end" datetime="{event.dateTo -> f:format.date(format: 'Y-m-d')} 12:00">{event.dateTo -> f:format.date(format: 'd')}.</time></f:if>
 						<span class="event-datemonth">{event.dateFrom -> f:format.date(format: '%B %Y')}</span>
 					</header>
 					<div class="event-content">
