@@ -12,4 +12,12 @@ plugin.tx_justevents {
 		# uncomment the following line to enable the new Property Mapper.
 		# rewrittenPropertyMapper = 1
 	}
+	settings {
+		latestUpcoming {
+			limit = 2
+			cropTitleAfterChars = 50
+			cropDescriptionAfterChars = 80
+			pidForListView = 48
+		}
+	}
 }

@@ -19,4 +19,35 @@ namespace SpoonerWeb\Justevents\Domain\Repository;
  *
  * @author Thomas Löffler <loeffler@spooner-web.de>
  */
-class EventRepository extends \TYPO3\CMS\Extbase\Persistence\Repository {}
+class EventRepository extends \TYPO3\CMS\Extbase\Persistence\Repository {
+
+	protected $defaultOrderings = array(
+		'dateFrom' => \TYPO3\CMS\Extbase\Persistence\QueryInterface::ORDER_ASCENDING,
+		'timeFrom' => \TYPO3\CMS\Extbase\Persistence\QueryInterface::ORDER_ASCENDING,
+		'dateTo' => \TYPO3\CMS\Extbase\Persistence\QueryInterface::ORDER_ASCENDING,
+		'timeTo' => \TYPO3\CMS\Extbase\Persistence\QueryInterface::ORDER_ASCENDING
+	);
+
+	/**
+	 * @return \TYPO3\CMS\Extbase\Persistence\QueryResultInterface
+	 */
+	public function findUpcoming() {
+		$query = $this->createQuery();
+		$query->matching($query->greaterThanOrEqual('dateFrom', time()));
+
+		return $query->execute();
+	}
+
+	/**
+	 * @param integer $latestLimit
+	 *
+	 * @return \TYPO3\CMS\Extbase\Persistence\QueryResultInterface
+	 */
+	public function findLatestUpcoming($latestLimit = 2) {
+		$query = $this->createQuery();
+		$query->matching($query->greaterThanOrEqual('dateFrom', time()));
+		$query->setLimit((int) $latestLimit);
+
+		return $query->execute();
+	}
+}
