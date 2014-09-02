@@ -1,0 +1,15 @@
+
+plugin.tx_justevents {
+	view {
+		# cat=plugin.tx_justevents/file; type=string; label=Path to template root (FE)
+		templateRootPath = EXT:justevents/Resources/Private/Templates/
+		# cat=plugin.tx_justevents/file; type=string; label=Path to template partials (FE)
+		partialRootPath = EXT:justevents/Resources/Private/Partials/
+		# cat=plugin.tx_justevents/file; type=string; label=Path to template layouts (FE)
+		layoutRootPath = EXT:justevents/Resources/Private/Layouts/
+	}
+	persistence {
+		# cat=plugin.tx_justevents//a; type=string; label=Default storage PID
+		storagePid =
+	}
+}

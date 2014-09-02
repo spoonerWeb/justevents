@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2014-09-02T06:17:13Z" product-name="justevents">
+		<header/>
+		<body>
+			<trans-unit id="title.description">
+				<source>title</source>
+			</trans-unit>
+			<trans-unit id="description.description">
+				<source>description</source>
+			</trans-unit>
+			<trans-unit id="date_from.description">
+				<source>dateFrom</source>
+			</trans-unit>
+			<trans-unit id="date_to.description">
+				<source>dateTo</source>
+			</trans-unit>
+			<trans-unit id="time_from.description">
+				<source>timeFrom</source>
+			</trans-unit>
+			<trans-unit id="time_to.description">
+				<source>timeTo</source>
+			</trans-unit>
+			<trans-unit id="location.description">
+				<source>location</source>
+			</trans-unit>
+			<trans-unit id="image.description">
+				<source>image</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

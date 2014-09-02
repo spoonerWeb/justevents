@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2014-09-02T06:17:13Z" product-name="justevents">
+		<header/>
+		<body>
+			<trans-unit id="tx_justevents_domain_model_event">
+				<source>Event</source>
+			</trans-unit>
+			<trans-unit id="tx_justevents_domain_model_event.title">
+				<source>Title</source>
+			</trans-unit>
+			<trans-unit id="tx_justevents_domain_model_event.description">
+				<source>Description</source>
+			</trans-unit>
+			<trans-unit id="tx_justevents_domain_model_event.date_from">
+				<source>Date From</source>
+			</trans-unit>
+			<trans-unit id="tx_justevents_domain_model_event.date_to">
+				<source>Date To</source>
+			</trans-unit>
+			<trans-unit id="tx_justevents_domain_model_event.time_from">
+				<source>Time From</source>
+			</trans-unit>
+			<trans-unit id="tx_justevents_domain_model_event.time_to">
+				<source>Time To</source>
+			</trans-unit>
+			<trans-unit id="tx_justevents_domain_model_event.location">
+				<source>Location</source>
+			</trans-unit>
+			<trans-unit id="tx_justevents_domain_model_event.image">
+				<source>Image</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>
