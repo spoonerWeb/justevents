@@ -30,6 +30,12 @@
 			<trans-unit id="tx_justevents_domain_model_event.image">
 				<source>Image</source>
 			</trans-unit>
+			<trans-unit id="more">
+				<source>mehr</source>
+			</trans-unit>
+			<trans-unit id="o-clock">
+				<source>Uhr</source>
+			</trans-unit>
 		</body>
 	</file>
 </xliff>
