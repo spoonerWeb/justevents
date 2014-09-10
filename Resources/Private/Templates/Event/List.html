@@ -13,14 +13,20 @@
 					<h3 class="event-title">{event.title}</h3>
 					<p class="event-details"><je:time onlyHours="1">{event.timeFrom}</je:time>-<je:time onlyHours="1">{event.timeTo}</je:time> <f:translate key="o-clock" /> - {event.location}</p>
 					<div class="event-description" aria-collapsed="true">
-						<f:image src="{event.image.uid}" treatIdAsReference="1" title="{event.image.originalResource.title}" alt="{event.image.originalResource.alternative}" maxWidth="240" />
-						{event.description}
+						<f:image class="event-img" src="{event.image.uid}" treatIdAsReference="1" title="{event.image.originalResource.title}" alt="{event.image.originalResource.alternative}" maxWidth="240" />
+						<p>{event.description}</p>
 					</div>
-
-					<a href="" class="link-show-more"><f:translate key="more" /></a>
-
 				</div>
 			</li>
 		</f:for>
 	</ul>
+	<script>
+		APP.loadModule('accordion', {
+			head: '.event-details',
+			headPos: 'after',
+			buttonStyle: 'simple',
+			off: 8,
+			on: 0
+		})
+	</script>
 </f:section>
