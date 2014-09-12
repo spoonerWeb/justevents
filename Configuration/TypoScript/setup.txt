@@ -21,3 +21,5 @@ plugin.tx_justevents {
 		}
 	}
 }
+
+config.tx_extbase.view.widget.Tx_Fluid_ViewHelpers_Widget_PaginateViewHelper.templateRootPath = {$module.tx_myext.view.templateRootPath}

@@ -8,11 +8,9 @@ if (!defined('TYPO3_MODE')) {
 	'Listing',
 	array(
 		'Event' => 'list, teaser',
-		
 	),
 	// non-cacheable actions
 	array(
-		'Event' => '',
-		
+		'Event' => 'list',
 	)
 );
