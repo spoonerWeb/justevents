@@ -14,9 +14,6 @@
 						<div class="event-content">
 							<h4 class="event-title"><f:format.crop maxCharacters="{settings.latestUpcoming.cropTitleAfterChars}" append="&nbsp;[...]">{event.title}</f:format.crop></h4>
 							<p class="event-details"><je:time onlyHours="1">{event.timeFrom}</je:time>-<je:time onlyHours="1">{event.timeTo}</je:time> <f:translate key="o-clock" /> - {event.location}</p>
-							<div class="event-description" aria-collapsed="true">
-								<p><f:format.stripTags>{event.description}</f:format.stripTags></p>
-							</div>
 						</div>
 					</f:link.page>
 				</li>
