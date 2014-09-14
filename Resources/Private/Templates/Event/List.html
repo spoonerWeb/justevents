@@ -21,14 +21,14 @@
 				</li>
 			</f:for>
 		</ul>
+		<script>
+			APP.loadModule('accordion', {
+				head: '.event-details',
+				headPos: 'after',
+				buttonStyle: 'simple',
+				off: 8,
+				on: 0
+			})
+		</script>
 	</je:widget.paginate>
-	<script>
-		APP.loadModule('accordion', {
-			head: '.event-details',
-			headPos: 'after',
-			buttonStyle: 'simple',
-			off: 8,
-			on: 0
-		})
-	</script>
 </f:section>
