@@ -15,7 +15,7 @@ plugin.tx_justevents {
 	settings {
 		latestUpcoming {
 			limit = 2
-			cropTitleAfterChars = 50
+			cropTitleAfterChars = 65
 			cropDescriptionAfterChars = 80
 			pidForListView = 48
 		}
