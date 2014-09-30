@@ -184,7 +184,7 @@ $GLOBALS['TCA']['tx_justevents_domain_model_event'] = array(
 		'image' => array(
 			'exclude' => 1,
 			'label' => 'LLL:EXT:justevents/Resources/Private/Language/locallang_db.xlf:tx_justevents_domain_model_event.image',
-			'config' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::getFileFieldTCAConfig('image', array(), array('jpg', 'png', 'gif', 'jpeg'))
+			'config' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::getFileFieldTCAConfig('image', array(), 'jpg, png, gif, jpeg')
 		),
 		
 	),
