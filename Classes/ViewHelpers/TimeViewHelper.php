@@ -26,7 +26,12 @@ class TimeViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\AbstractViewHelper
 	 */
 	public function render() {
 		$secondsSinceMidnight = (int) $this->renderChildren();
-		$hours = (int) $secondsSinceMidnight / 3600;
+
+		if (!$secondsSinceMidnight) {
+			return '';
+		}
+
+		$hours = (int) ($secondsSinceMidnight / 3600);
 		$minutes = (int) ($secondsSinceMidnight % 3600 / 60);
 
 		if ($hours < 10) {
