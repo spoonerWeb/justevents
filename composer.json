@@ -1,0 +1,35 @@
+{
+  "name": "spooner-web/justevents",
+  "type": "typo3-cms-extension",
+  "description": "A simple events extension",
+  "homepage": "https://typo3.org",
+  "license": [
+    "GPL-2.0+"
+  ],
+  "keywords": [
+    "TYPO3",
+    "extension",
+    "event"
+  ],
+  "authors": [
+    {
+      "name": "Thomas Löffler",
+      "email": "loeffler@spooner-web.de",
+      "homepage": "https://spooner-web.de",
+      "role": "Developer"
+    }
+  ],
+  "require": {
+    "typo3/cms": "^7.6 || ^8"
+  },
+  "config": {
+    "vendor-dir": ".Build/vendor/",
+    "bin-dir": ".Build/bin/"
+  },
+  "extra": {
+    "typo3/cms": {
+      "cms-package-dir": "{$vendor-dir}/typo3/cms",
+      "web-dir": ".Build/Web"
+    }
+  }
+}
