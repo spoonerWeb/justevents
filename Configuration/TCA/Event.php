@@ -9,13 +9,13 @@ $GLOBALS['TCA']['tx_justevents_domain_model_event'] = array(
 		'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, title, description, date_from, date_to, time_from, time_to, location, image',
 	),
 	'types' => array(
-		'1' => array('showitem' => 'sys_language_uid;;;;1-1-1, l10n_parent, l10n_diffsource, hidden;;1, title, description;;;richtext:rte_transform[mode=ts_links], date_from, date_to, time_from, time_to, location, image, --div--;LLL:EXT:cms/locallang_ttc.xlf:tabs.access, starttime, endtime'),
+		'1' => array('showitem' => 'sys_language_uid;;;;1-1-1, l10n_parent, l10n_diffsource, hidden;;1, title, date_from, date_to, --div--;LLL:EXT:cms/locallang_ttc.xlf:tabs.access, starttime, endtime'),
 	),
 	'palettes' => array(
 		'1' => array('showitem' => ''),
 	),
 	'columns' => array(
-	
+
 		'sys_language_uid' => array(
 			'exclude' => 1,
 			'label' => 'LLL:EXT:lang/locallang_general.xlf:LGL.language',
@@ -56,7 +56,7 @@ $GLOBALS['TCA']['tx_justevents_domain_model_event'] = array(
 				'max' => 255,
 			)
 		),
-	
+
 		'hidden' => array(
 			'exclude' => 1,
 			'label' => 'LLL:EXT:lang/locallang_general.xlf:LGL.hidden',
@@ -186,6 +186,5 @@ $GLOBALS['TCA']['tx_justevents_domain_model_event'] = array(
 			'label' => 'LLL:EXT:justevents/Resources/Private/Language/locallang_db.xlf:tx_justevents_domain_model_event.image',
 			'config' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::getFileFieldTCAConfig('image', array(), 'jpg, png, gif, jpeg')
 		),
-		
 	),
 );

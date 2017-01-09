@@ -2,22 +2,12 @@
 <f:layout name="Default" />
 
 <f:section name="main">
-	<div class="row">
-		<ul class="event-teaser-list">
-			<f:for each="{events}" as="event">
-				<li class="event-item h-event">
-					<f:link.page pageUid="{settings.latestUpcoming.pidForListView}">
-						<header class="event-header">
-							<time class="dt-start" datetime="{event.dateFrom -> f:format.date(format: 'Y-m-d')} {event.timeFrom -> je:time()}">{event.dateFrom -> f:format.date(format: 'd')}.</time><f:if condition="{event.dateTo}"><f:if condition="{event.dateFrom -> f:format.date(format: 'dmY')} != {event.dateTo -> f:format.date(format: 'dmY')}">-<time class="dt-end" datetime="{event.dateTo -> f:format.date(format: 'Y-m-d')}  {event.timeTo -> je:time()}">{event.dateTo -> f:format.date(format: 'd')}.</time></f:if></f:if>
-							<span class="event-datemonth">{event.dateFrom -> f:format.date(format: '%B %Y')}</span>
-						</header>
-						<div class="event-content">
-							<h4 class="event-title"><f:format.crop maxCharacters="{settings.latestUpcoming.cropTitleAfterChars}" append="&nbsp;[...]">{event.title}</f:format.crop></h4>
-							<p class="event-details"><je:time>{event.timeFrom}</je:time><f:if condition="{event.timeTo}">-<je:time>{event.timeTo}</je:time></f:if> <f:translate key="o-clock" /> - {event.location}</p>
-						</div>
-					</f:link.page>
-				</li>
-			</f:for>
-		</ul>
-	</div>
+	<ul class="event-list">
+		<f:for each="{events}" as="event">
+			<li class="event-item h-event">
+				<time class="dt-start" datetime="{event.dateFrom -> f:format.date(format: 'Y-m-d')}">{event.dateFrom -> f:format.date(format: 'd.m.')}</time><f:if condition="{event.dateTo}"><f:if condition="{event.dateFrom -> f:format.date(format: 'dmY')} != {event.dateTo -> f:format.date(format: 'dmY')}">-<time class="dt-end" datetime="{event.dateTo -> f:format.date(format: 'Y-m-d')}">{event.dateTo -> f:format.date(format: 'd.m.')}</time></f:if></f:if><br>
+				{event.title}
+			</li>
+		</f:for>
+	</ul>
 </f:section>

@@ -50,4 +50,27 @@ class EventRepository extends \TYPO3\CMS\Extbase\Persistence\Repository {
 
 		return $query->execute();
 	}
+
+	/**
+	 * @param integer $withinDays
+	 * @return array|\TYPO3\CMS\Extbase\Persistence\QueryResultInterface
+	 */
+	public function findAllWithinDays($withinDays = 30) {
+		$query = $this->createQuery();
+		$inWithinDays = strtotime('+ ' . $withinDays . ' days');
+		$query->matching(
+			$query->logicalAnd(
+				$query->logicalOr(
+					$query->logicalAnd(
+						$query->greaterThanOrEqual('dateFrom', date('Y-m-d')),
+						$query->equals('dateTo', 0)
+					),
+					$query->greaterThanOrEqual('dateTo', date('Y-m-d'))
+				),
+				$query->lessThan('dateFrom', date('Y-m-d', $inWithinDays))
+			)
+		);
+
+		return $query->execute();
+	}
 }

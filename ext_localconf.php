@@ -7,7 +7,7 @@ if (!defined('TYPO3_MODE')) {
 	'SpoonerWeb.' . $_EXTKEY,
 	'Listing',
 	array(
-		'Event' => 'list, teaser',
+		'Event' => 'teaser, list',
 	),
 	// non-cacheable actions
 	array(
