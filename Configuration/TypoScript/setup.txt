@@ -1,9 +1,9 @@
 
 plugin.tx_justevents {
 	view {
-		templateRootPath = {$plugin.tx_justevents.view.templateRootPath}
-		partialRootPath = {$plugin.tx_justevents.view.partialRootPath}
-		layoutRootPath = {$plugin.tx_justevents.view.layoutRootPath}
+		templateRootPaths.10 = {$plugin.tx_justevents.view.templateRootPath}
+		partialRootPaths.10 = {$plugin.tx_justevents.view.partialRootPath}
+		layoutRootPaths.10 = {$plugin.tx_justevents.view.layoutRootPath}
 	}
 	persistence {
 		storagePid = {$plugin.tx_justevents.persistence.storagePid}
@@ -22,4 +22,8 @@ plugin.tx_justevents {
 	}
 }
 
-config.tx_extbase.view.widget.Tx_Fluid_ViewHelpers_Widget_PaginateViewHelper.templateRootPath = {$module.tx_myext.view.templateRootPath}
+config.tx_extbase.view.widget {
+	SpoonerWeb\Justevents\ViewHelpers\Widget\PaginateViewHelper {
+		templateRootPath = {$plugin.tx_justevents.view.templateRootPath}
+	}
+}
