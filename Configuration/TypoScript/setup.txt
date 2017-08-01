@@ -18,6 +18,7 @@ plugin.tx_justevents {
 			cropTitleAfterChars = 65
 			cropDescriptionAfterChars = 80
 			pidForListView = 48
+			withinDays = 30
 		}
 	}
 }
