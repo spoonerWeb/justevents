@@ -43,7 +43,17 @@ class EventController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
 	 * @return void
 	 */
 	public function teaserAction() {
-		$latestEvents = $this->eventRepository->findAllWithinDays();
+		$withinDays = 30;
+		if (!empty($this->settings['latestUpcoming']['withinDays'])) {
+			$withinDays = (int)$this->settings['latestUpcoming']['withinDays'];
+		}
+
+		$limit = 0;
+		if (!empty($this->settings['latestUpcoming']['limit'])) {
+			$limit = (int)$this->settings['latestUpcoming']['limit'];
+		}
+
+		$latestEvents = $this->eventRepository->findAllWithinDays($withinDays, $limit);
 		$this->view->assign('events', $latestEvents);
 	}
 

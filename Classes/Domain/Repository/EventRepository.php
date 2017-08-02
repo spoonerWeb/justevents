@@ -53,9 +53,10 @@ class EventRepository extends \TYPO3\CMS\Extbase\Persistence\Repository {
 
 	/**
 	 * @param integer $withinDays
+	 * @param integer $limit
 	 * @return array|\TYPO3\CMS\Extbase\Persistence\QueryResultInterface
 	 */
-	public function findAllWithinDays($withinDays = 30) {
+	public function findAllWithinDays($withinDays = 30, $limit = 0) {
 		$query = $this->createQuery();
 		$inWithinDays = strtotime('+ ' . $withinDays . ' days');
 		$query->matching(
@@ -70,6 +71,9 @@ class EventRepository extends \TYPO3\CMS\Extbase\Persistence\Repository {
 				$query->lessThan('dateFrom', date('Y-m-d', $inWithinDays))
 			)
 		);
+		if ($limit > 0) {
+			$query->setLimit($limit);
+		}
 
 		return $query->execute();
 	}
